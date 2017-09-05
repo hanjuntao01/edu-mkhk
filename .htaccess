@@ -1,0 +1,6 @@
+RewriteEngine On
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
+DirectoryIndex index.html index.php
+order deny,allow
