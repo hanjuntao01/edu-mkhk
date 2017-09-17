@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Megacap Aviation Education Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery.json.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+	<script src="app/exam/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible; background: white;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-3">
+				<h1 style="font-size:42px;color:#337AB7;"><img src="../app/core/styles/img/logo2.png" style="height:100px;margin-top:-30px;"/></h1>
+			</div>
+			<div class="col-xs-1">
+			</div>
+			<div class="col-xs-6" style="padding-top:22px;">
+				<div class="form-inline">
+					<div class="form-group">
+						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="Search Course">
+					</div>
+					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">Search Course</button>
+				</div>
+			</div>
+			<div class="col-xs-2" style="padding-top:22px;">
+				<ul class="list-unstyled list-inline">
+										<li>
+						<div class="btn-group">
+							<button type="button" class="btn btn-primary"><em class="glyphicon glyphicon-user"></em> 16SHAHRS003</button>
+							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span class="caret"></span>
+								<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> User Center</a></li>
+																								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> Logout</a></li>
+							</ul>
+						</div>
+					</li>
+									</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#1a4c87;">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-12">
+				<ul class="list-unstyled list-inline" style="white-space:nowrap">
+					<li class="menu col-xs-1 active"><a href="index.php" class="icon">Home</a></li>
+					<li class="menu col-xs-1"><a href="index.php?course">Courses</a></li>
+					<li class="menu col-xs-1"><a href="index.php?exam-app-basics">Exam</a></li>
+					<li class="menu col-xs-1"><a href="mailto:hr@megacap.com.cn">We Care Career</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="box itembox" style="margin-bottom:0px;">
+				<div class="col-xs-12">
+					<ol class="breadcrumb">
+					  <li><a href="index.php">Home</a></li>
+					  
+					  <li><a href="index.php?exam-app-basics">Cargo Skills and Procedures</a></li>
+					  <li class="active">Exams Results</li>
+					</ol>
+				</div>
+			</div>
+			<div class="box itembox">
+				<h4 class="title">Exams Results</h4>
+				<blockquote class="questype" style="margin-top:20px;">
+					<p>Your highest score:<span class="text-warning">100</span> Your best ranking:<span class="text-warning">2</span></p>
+				</blockquote>
+				<table class="table table-bordered table-hover">
+					<tr class="info">
+						<td>Ranking</td>
+						<td>Name</td>
+                        <td>Score</td>
+						<td>Time for Exams</td>
+						<td>Use Time</td>
+					</tr>
+										<tr>
+						<td>21</td>
+						<td>Zemann</td>
+						<td>100</td>
+						<td>2016-11-23 15:06:33</td>
+						<td>4 Minites</td>
+					</tr>
+									<tr>
+						<td>22</td>
+						<td></td>
+						<td>100</td>
+						<td>2016-11-23 14:51:25</td>
+						<td>5 Minites</td>
+					</tr>
+									<tr>
+						<td>23</td>
+						<td></td>
+						<td>100</td>
+						<td>2016-11-23 14:51:59</td>
+						<td>4 Minites</td>
+					</tr>
+									<tr>
+						<td>24</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-22 10:06:43</td>
+						<td>2 Minites</td>
+					</tr>
+									<tr>
+						<td>25</td>
+						<td></td>
+						<td>100</td>
+						<td>2016-11-21 17:28:35</td>
+						<td>39 Seconds</td>
+					</tr>
+									<tr>
+						<td>26</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-17 15:52:18</td>
+						<td>4 Minites</td>
+					</tr>
+									<tr>
+						<td>27</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-16 11:14:12</td>
+						<td>8 Minites</td>
+					</tr>
+									<tr>
+						<td>28</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 20:19:12</td>
+						<td>8 Seconds</td>
+					</tr>
+									<tr>
+						<td>29</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 15:09:21</td>
+						<td>12 Seconds</td>
+					</tr>
+									<tr>
+						<td>30</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:18:26</td>
+						<td>6 Seconds</td>
+					</tr>
+									<tr>
+						<td>31</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:17:09</td>
+						<td>17 Seconds</td>
+					</tr>
+									<tr>
+						<td>32</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:16:56</td>
+						<td>5 Seconds</td>
+					</tr>
+									<tr>
+						<td>33</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:16:38</td>
+						<td>5 Seconds</td>
+					</tr>
+									<tr>
+						<td>34</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:16:23</td>
+						<td>8 Seconds</td>
+					</tr>
+									<tr>
+						<td>35</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:15:53</td>
+						<td>12 Seconds</td>
+					</tr>
+									<tr>
+						<td>36</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-02 13:15:18</td>
+						<td>7 Seconds</td>
+					</tr>
+									<tr>
+						<td>37</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-01 22:28:51</td>
+						<td>4 Minites</td>
+					</tr>
+									<tr>
+						<td>38</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-11-01 14:56:26</td>
+						<td>2 Minites</td>
+					</tr>
+									<tr>
+						<td>39</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-10-31 11:45:40</td>
+						<td>16 Seconds</td>
+					</tr>
+									<tr>
+						<td>40</td>
+						<td>test</td>
+						<td>100</td>
+						<td>2016-10-31 11:44:33</td>
+						<td>59 Seconds</td>
+					</tr>
+								</table>
+				<ul class="pagination pull-right"><li><a target="" href="index.php?exam-app-score&page=1">1</a></li><li><a href="#" class="current">2</a></li><li><a target="" href="index.php?exam-app-score&page=3">3</a></li><li><a target="" href="index.php?exam-app-score&page=4">4</a></li><li><a target="" href="index.php?exam-app-score&page=5">5</a></li><li><a>A total of 84 data</a></li></ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#1a4c87;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center">Megacap Aviation Education Platform &nbsp;&nbsp;MEGACAP AVIATION SERVICE CO.,LTD</li>
+					<li class="text-center">Address: Unit J1-J2, 19th Floor,No.1800,West ZhongShan Road,Shanghai Zhaofeng Universal Bldg,200235,Shanghai,China</li>
+					<li class="text-center">Email: hr@megacap.com.cn</li>
+					<li class="text-center">Copyright © 2016 - 2020</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

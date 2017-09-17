@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Megacap Aviation Education Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible; background: white;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-10">				<h2 style="color:#337AB7;"><img src="../app/core/styles/img/logo2.png" style="height:100px;margin-top:-30px;"/>&nbsp;Megacap Aviation Education Platform</h2>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-primary"><em class="glyphicon glyphicon-user"></em> peadmin</button>							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> User center</a></li>																<li><a href="index.php?core-master"><em class="glyphicon glyphicon-dashboard"></em> Admin management</a></li>								<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> Logout</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#1a4c87;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul style="white-space: nowrap;" class="list-unstyled list-inline">					<li class="menu col-xs-1">						<a href="index.php?core-master">Home</a>					</li>																																													<li class="menu col-xs-1 active">						<a href="index.php?course-master">课程course</a>					</li>																														<li class="menu col-xs-1">						<a href="index.php?exam-master">考试exam</a>					</li>																				<li class="menu col-xs-1">						<a href="index.php?user-master">用户user</a>					</li>														</ul>			</div>		</div>	</div></div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
+				<ul class="list-group">	<li class="list-group-item ">				<a href="index.php?course-master">Index</a>			</li>	<li class="list-group-item ">				<a href="index.php?course-master-category">Course category</a>			</li>	<li class="list-group-item active">		Course management			</li>	<li class="list-group-item ">				<a title="Courseware management" href="index.php?course-master-contents">Courseware manage..</a>			</li><!-- 	<li class="list-group-item ">				<a href="index.php?course-master-module">模型管理</a>			</li> --></ul>			</div>
+			<div class="col-xs-10" id="datacontent">
+				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
+					<div class="col-xs-12">
+						<ol class="breadcrumb">
+							<li><a href="index.php?course-master">课程course</a></li>
+														<li class="active">Course management</li>
+													</ol>
+					</div>
+				</div>
+				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
+					<h4 class="title" style="padding:10px;">
+						Category management
+						<a class="btn btn-primary pull-right" href="index.php?course-master-course-add&catid=&page=">Add course</a>
+					</h4>
+					<h4>All course</h4>
+					<form action="index.php?course-master-course" method="post" class="form-inline">
+						<table class="table">
+					        <tr>
+								<td>
+									Course ID：
+								</td>
+								<td>
+									<input name="search[courseid]" class="form-control" size="15" type="text" class="number" value=""/>
+								</td>
+								<td>
+									Add time：
+								</td>
+								<td>
+									<input class="form-control datetimepicker" data-date="2017-02-23" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2017-02-23" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
+								</td>
+								<td>
+									Keyword：
+								</td>
+								<td>
+									<input class="form-control" name="search[keyword]" size="15" type="text" value=""/>
+								</td>
+							</tr>
+					        <tr>
+								<td>
+									Category：
+								</td>
+								<td colspan="3">
+							  		<div class="form-inline form-group">
+								  		<select msg="You must select a category" class="autocombox form-control" name="search[cscatid]" refUrl="index.php?course-master-category-ajax-getchildcategory&catid={value}">
+							            	<option value="">Select top category</option>
+							            								            	<option value="7">AvailableCourses</option>
+							            								            	<option value="8">UnavailableCourses</option>
+							            								            </select>
+						            </div>
+					        	</td>
+								<td>
+									<button class="btn btn-primary" type="submit">Submit</button>
+								</td>
+								<td></td>
+					        </tr>
+						</table>
+						<div class="input">
+							<input type="hidden" value="1" name="search[argsmodel]" />
+						</div>
+					</form>
+					<form action="index.php?course-master-course-lite" method="post">
+						<fieldset>
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr class="info">
+					                    <th width="36"><input type="checkbox" class="checkall" target="delids"/></th>
+					                <!--     <th width="40">权重</th> -->
+					                    <th width="36">ID</th>
+					                    <th width="80">Thumbnail</th>
+								        <th>Title</th>
+								        <th width="100">Category</th>
+								        <th width="100">Time</th>
+								        <th width="140">Operate</th>
+					                </tr>
+					            </thead>
+					            <tbody>
+					            						            	<tr>
+					                    <td><input type="checkbox" name="delids[2]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[2]" value="0" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>2</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161103/14781658184969.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Cargo Skills and Procedures 2015					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=7" target="">AvailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-10-19					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=2" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=7&courseid=2&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=7&courseid=2&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[13]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[13]" value="0" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>13</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161126/14801750497435.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        First Flight					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-26					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=13" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=13&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=13&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[6]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[6]" value="3" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>6</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161126/14801735912903.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Art of Data Management					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-02					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=6" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=6&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=6&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[8]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[8]" value="5" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>8</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161126/14801727698635.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Power to Succeed					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-02					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=8" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=8&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=8&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[15]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[15]" value="6" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>15</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161126/14801752993791.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Safety For All Sizes					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-26					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=15" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=15&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=15&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[11]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[11]" value="7" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>11</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161110/14787616706418.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Better Performance					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-10					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=11" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=11&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=11&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[14]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[14]" value="8" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>14</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161126/14801752081592.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Bag Tag Issue					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-26					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=14" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=14&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=14&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					            	<tr>
+					                    <td><input type="checkbox" name="delids[16]" value="1"></td>
+					                <!--     <td><input class="form-control" type="text" name="ids[16]" value="9" style="width:36px;padding:2px 5px;"/></td> -->
+					                    <td>16</td>
+					                    <td class="picture"><img src="../files/attach/images/content/20161127/14802166005146.jpg" alt="" style="width:24px;"/></td>
+					                    <td>
+					                        Improving Baggage Service Levels					                    </td>
+					                    <td>
+					                    	<a href="index.php?course-master-course&catid=8" target="">UnavailableCourses</a>
+					                    </td>
+					                    <td>
+					                    	2016-11-26					                    </td>
+					                    <td class="actions">
+					                    	<div class="btn-group">
+					                    		<a class="btn" href="index.php?course-master-contents&courseid=16" title="Courseware list"><em class="glyphicon glyphicon-list"></em></a>
+												<a class="btn" href="index.php?course-master-course-edit&catid=8&courseid=16&page=" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?course-master-course-del&catid=8&courseid=16&page=" title="Delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+					                    </td>
+					                </tr>
+					                					        	</tbody>
+					        </table>
+					        <div class="form-group">
+					            <div class="controls">
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="modify" checked/>Sort
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="movecategory" />Move
+						            </label>
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="delete" />Delete
+						            </label>
+						            						            <label class="radio-inline">
+						            	<button class="btn btn-primary" type="submit">Submit</button>
+						            </label>
+						            <input type="hidden" name="modifycoursesequence" value="1"/>
+						            <input type="hidden" name="catid" value=""/>
+						            <input type="hidden" name="page" value=""/>
+						        </div>
+					        </div>
+							<ul class="pagination pull-right">
+															</ul>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#1a4c87;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center">Megacap Aviation Education Platform &nbsp;&nbsp;MEGACAP AVIATION SERVICE CO.,LTD</li>
+					<li class="text-center">Address: Unit J1-J2, 19th Floor,No.1800,West ZhongShan Road,Shanghai Zhaofeng Universal Bldg,200235,Shanghai,China</li>
+					<li class="text-center">Email: hr@megacap.com.cn</li>
+					<li class="text-center">Copyright © 2016 - 2020</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

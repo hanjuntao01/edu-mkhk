@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Megacap Aviation Education Platform</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/bootstrap.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/datetimepicker.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/jquery-ui.min.css" />
+	<link rel="stylesheet" type="text/css" href="app/core/styles/css/peskin.css" />
+	<!--[if lt IE 9]>
+	<script src="app/core/styles/js/html5shiv.min.js"></script>
+	<script src="app/core/styles/js/respond.min.js"></script>
+	<![endif]-->
+	<script src="app/core/styles/js/jquery.min.js"></script>
+	<script src="app/core/styles/js/jquery-ui.min.js"></script>
+	<script src="app/core/styles/js/bootstrap.min.js"></script>
+	<script src="app/core/styles/js/bootstrap-datetimepicker.js"></script>
+
+	<script src="app/core/styles/js/all.fine-uploader.min.js"></script>
+
+	<script src="app/core/styles/js/ckeditor/ckeditor.js"></script>
+	<script src="app/core/styles/js/plugin.js"></script>
+</head><body>
+<div class="container-fluid box" style="margin:0px auto;padding-top:10px;overflow:visible; background: white;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-3">				<h1 style="font-size:42px;color:#337AB7;"><img src="../app/core/styles/img/logo2.png" style="height:100px;margin-top:-30px;"/></h1>			</div>			<div class="col-xs-1">			</div>			<div class="col-xs-6" style="padding-top:22px;">				<div class="form-inline">					<div class="form-group">						<input type="text" style="width:380px;" class="form-control" id="keyword" placeholder="Search Course">					</div>					<button type="button" class="btn btn-primary" onclick="javascript:window.location='index.php?course-app-search&keyword='+$('#keyword').val();">Search Course</button>				</div>			</div>			<div class="col-xs-2" style="padding-top:22px;">				<ul class="list-unstyled list-inline">										<li>						<div class="btn-group">							<button type="button" class="btn btn-primary"><em class="glyphicon glyphicon-user"></em> teacher</button>							<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">								<span class="caret"></span>								<span class="sr-only">Toggle Dropdown</span>							</button>							<ul class="dropdown-menu">								<li><a href="index.php?user-center"><em class="glyphicon glyphicon-user"></em> User Center</a></li>								<li><a href="index.php?exam-teach"><em class="glyphicon glyphicon-book"></em> Teacher management</a></li>																<li><a class="ajax" href="index.php?user-app-logout"><em class="glyphicon glyphicon-log-out"></em> Logout</a></li>							</ul>						</div>					</li>									</ul>			</div>		</div>	</div></div><div class="container-fluid navbar" style="margin-top:0px;margin-bottom:0px;padding-top:10px;background-color:#1a4c87;">	<div class="row-fluid">		<div class="main">			<div class="col-xs-12">				<ul class="list-unstyled list-inline" style="white-space:nowrap">					<li class="menu col-xs-1 active"><a href="index.php" class="icon">Home</a></li>					<li class="menu col-xs-1"><a href="index.php?course">Courses</a></li>					<li class="menu col-xs-1"><a href="index.php?exam-app-basics">Exam</a></li>					<li class="menu col-xs-1"><a href="mailto:hr@megacap.com.cn">We Care Career</a></li>				</ul>			</div>		</div>	</div></div><div class="container-fluid">
+	<div class="row-fluid">
+		<div class="main">
+			<div class="col-xs-2" style="padding-top:10px;margin-bottom:0px;">
+				<style>.panel-heading a{color:#FFFFFF;text-decoration:none;}</style><div class="panel-group" id="panel-13465">	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-707348">				<em class="glyphicon glyphglyphicon glyphicon-th-large"></em> Exam design			</a>		</div>		<div id="panel-element-707348" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="?exam-teach-basic"> Exam room list</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-2120901">				<em class="glyphicon glyphglyphicon glyphicon-wrench"></em> Course grade			</a>		</div>		<div id="panel-element-2120901" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-users"> Grade management</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-users-honorlist&basicid=5"> Certificate</a></li>			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212076">				<em class="glyphicon glyphglyphicon glyphicon-text-color"></em> Question management			</a>		</div>		<div id="panel-element-212076" class="panel-collapse in collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-questions"> General questions management</a></li>			<!-- 	<li class="list-group-item"><a href="index.php?exam-teach-rowsquestions"> Title Management</a></li> -->			</ul>		</div>	</div>	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212096">				<em class="glyphicon glyphglyphicon glyphicon-duplicate"></em> Papers management			</a>		</div>		<div id="panel-element-212096" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-exams">List of papers</a></li>			<!-- 	<li class="list-group-item"><a href="index.php?exam-teach-exams-autopage">随机组卷</a></li> -->				<li class="list-group-item"><a href="index.php?exam-teach-exams-selfpage">Manual test paper</a></li>			<!-- 	<li class="list-group-item"><a href="index.php?exam-teach-exams-temppage">即时组卷</a></li> -->			</ul>		</div>	</div><!-- 	<div class="panel panel-primary">		<div class="panel-heading">			<a class="panel-toggle text-center" data-parent="#panel-13465" data-toggle="collapse" href="#panel-element-212090">				<em class="glyphicon glyphglyphicon glyphicon-trash"></em> recycle bin			</a>		</div>		<div id="panel-element-212090" class="panel-collapse collapse" role="tabpanel">     		<ul class="list-group">				<li class="list-group-item"><a href="index.php?exam-teach-recyle">General examination questions</a></li>				<li class="list-group-item"><a href="index.php?exam-teach-recyle-rows">Title Management</a></li>			</ul>		</div>	</div> --></div>			</div>
+			<div class="col-xs-10" id="datacontent">
+				<div class="box itembox" style="margin-bottom:0px;border-bottom:1px solid #CCCCCC;">
+					<div class="col-xs-12">
+						<ol class="breadcrumb">
+							<li><a href="index.php?exam-teach">Test module</a></li>
+							<li><a href="index.php?exam-teach-questions">Questions management</a></li>
+							<li class="active">General test questions management</li>
+						</ol>
+					</div>
+				</div>
+				<div class="box itembox" style="padding-top:10px;margin-bottom:0px;">
+					<h4 class="title" style="padding:10px;">
+						General test questions management
+						<span class="pull-right">
+							<a data-toggle="dropdown" class="btn btn-primary" href="#">Add questions <strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li><a href="index.php?exam-teach-questions-addquestion&page=">Single item addition</a></li>
+							<!-- 	<li><a href="index.php?exam-teach-questions-bataddquestion&page=">Batch add</a></li>
+								<li><a href="index.php?exam-teach-questions-filebataddquestion&page=">CSV import</a></li> -->
+							</ul>
+						</span>
+					</h4>
+					<form action="index.php?exam-teach-questions" method="post" class="form-inline">
+						<table class="table">
+							<thead>
+				                <tr>
+							        <th colspan="2">Search</th>
+							        <th></th>
+							        <th></th>
+							        <th></th>
+							        <th></th>
+				                </tr>
+				            </thead>
+							<tr>
+								<td>
+									Questions ID：
+								</td>
+								<td>
+									<input name="search[questionid]" class="form-control" size="10" type="text" class="number" value=""/>
+								</td>
+								<td>
+									Added time：
+								</td>
+								<td>
+									<input class="form-control datetimepicker" data-date="2016-12-01" data-date-format="yyyy-mm-dd" type="text" name="search[stime]" size="10" id="stime" value=""/> - <input class="form-control datetimepicker" data-date="2016-12-01" data-date-format="yyyy-mm-dd" size="10" type="text" name="search[etime]" id="etime" value=""/>
+								</td>
+								<td>
+									Keyword：
+								</td>
+								<td>
+									<input class="form-control" name="search[keyword]" size="10" type="text" value=""/>
+								</td>
+							</tr>
+					        <tr>
+								<td>
+									Subject：
+								</td>
+								<td>
+					        		<select name="search[questionsubjectid]" class="combox form-control" target="sectionselect" refUrl="?exam-teach-questions-ajax-getsectionsbysubjectid&subjectid={value}">
+						        		<option value="0">Select subject</option>
+								  										  		<option value="3">美凯航空8套单元测试+1套综合测试</option>
+								  									  		</select>
+					        	</td>
+					        	<td>
+									Chapter：
+								</td>
+								<td>
+							  		<select name="search[questionsectionid]" class="combox form-control" id="sectionselect" target="knowsselect" refUrl="?exam-teach-questions-ajax-getknowsbysectionid&sectionid={value}">
+							  		<option value="0">Select Chapter</option>
+							  									  		</select>
+					        	</td>
+					        	<td>
+									Knowledge point：
+								</td>
+								<td>
+							  		<select name="search[questionknowsid]" id="knowsselect" class="form-control">
+								  		<option value="">Select Knowledge point</option>
+								  									  		</select>
+					        	</td>
+							</tr>
+							<!-- <tr>
+								<td>
+									录入人：
+								</td>
+					        	<td>
+					        		<input class="form-control" name="search[username]" size="10" type="text" value=""/>
+					        	</td>
+					        	<td>
+									试题类型：
+								</td>
+								<td>
+									<select name="search[questiontype]" class="form-control">
+								  		<option value="0">类型不限</option>
+								  										  		<option value="1">单选题</option>
+								  										  		<option value="2">多选题</option>
+								  										  		<option value="3">判断题</option>
+								  										  		<option value="4">问答题</option>
+								  										  		<option value="5">填空题</option>
+								  										  		<option value="6">定值填空题</option>
+								  									  		</select>
+								</td>
+								<td>
+									难度：
+								</td>
+								<td>
+									<select name="search[questionlevel]" class="form-control">
+								  		<option value="0">难度不限</option>
+										<option value="1">易</option>
+										<option value="2">中</option>
+										<option value="3">难</option>
+							  		</select>
+								</td>
+							</tr> -->
+							<tr>
+								<td colspan="2">
+									<button class="btn btn-primary" type="submit">Search</button>
+									<input type="hidden" value="1" name="search[argsmodel]" />
+								</td>
+								<td colspan="4"></td>
+							</tr>
+						</table>
+					</form>
+					<form action="index.php?exam-teach-questions-batdel" method="post">
+						<fieldset>
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr class="info">
+					                    <th width="32"><input type="checkbox" class="checkall" target="delids"/></th>
+					                    <th width="40">ID</th>
+								        <th width="80">Question types</th>
+								        <th>Question content</th>
+								        <th width="80">Input person</th>
+								        <th width="80">Added time</th>
+								    <!--     <th width="48">degree of difficulty</th> -->
+								        <th width="100">Operate</th>
+					                </tr>
+					            </thead>
+					            <tbody>
+				                    							        <tr>
+										<td><input type="checkbox" name="delids[181]" value="1"></td>
+										<td>
+											181										</td>
+										<td>
+											问答题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=181" data-target="#modal">How Airplanes Work
+
+请发挥您的想象力，告诉我们&ldquo;为什么飞机会飞&rdquo;吧。</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-22										</td>
+									<!-- 	<td>
+											难										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=181" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=181" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[180]" value="1"></td>
+										<td>
+											180										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=180" data-target="#modal">
+	Calculate the actual contact area(length by width) of a box (LWH 280cm&times;100cm&times;160cm) standing on 6 chocks with the follow...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=180" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=180" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[179]" value="1"></td>
+										<td>
+											179										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=179" data-target="#modal">List 3 kinds of commodities requiring that a temperature indication must be applied.&nbsp;
+
+列举3种必须要有温度要求的货...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=179" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=179" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[178]" value="1"></td>
+										<td>
+											178										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=178" data-target="#modal">Calculate the chargeable weight of a piece of cargo that weights 160,1 kg and has the dimensions 98.4 * 85.7 * 109.5 cm.
+
+Which weigh...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=178" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=178" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[177]" value="1"></td>
+										<td>
+											177										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=177" data-target="#modal">How high can you build a P6P for the position CR on the main deck of a B747-200F?
+
+在B747-200F的上层机舱CR位置，P6P最高可...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=177" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=177" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[176]" value="1"></td>
+										<td>
+											176										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=176" data-target="#modal">What is the maximum loading height in the lower deck of a B737?
+
+B737的下层机舱的最大高度是多少？</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=176" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=176" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[175]" value="1"></td>
+										<td>
+											175										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=175" data-target="#modal">Which container has already an F-contour? List two of them.&nbsp;
+
+哪种集装器是F外型？请列举2个。</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=175" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=175" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[174]" value="1"></td>
+										<td>
+											174										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=174" data-target="#modal">Of which aircraft does a U-contour fit into the lower deck?
+
+U外形适合哪些机型的下层机舱？</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=174" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=174" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[173]" value="1"></td>
+										<td>
+											173										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=173" data-target="#modal">What is the maximum weight of a PZA in the main deck of an MD-11F on position HR/JR? Longitudinal or Lateral loading?&nbsp;
+
+MD-11F...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=173" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=173" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        							        <tr>
+										<td><input type="checkbox" name="delids[172]" value="1"></td>
+										<td>
+											172										</td>
+										<td>
+											单选题										</td>
+										<td>
+											<a title="View Question" class="selfmodal" href="javascript:;" url="index.php?exam-teach-questions-detail&questionid=172" data-target="#modal">What is the maximum weight of a PZA pallet on Position KR-LR of a 747SF-200SF? Longitudinal loading?
+
+在747-200SF的KR-LR位置上...</a>
+										</td>
+										<td>
+											peadmin										</td>
+										<td>
+											2016-11-11										</td>
+									<!-- 	<td>
+											中										</td> -->
+										<td>
+											<div class="btn-group">
+					                    		<a class="btn" href="index.php?exam-teach-questions-modifyquestion&page=&questionid=172" title="Modify"><em class="glyphicon glyphicon-edit"></em></a>
+												<a class="btn confirm" href="index.php?exam-teach-questions-delquestion&questionparent=0&page=&questionid=172" title="delete"><em class="glyphicon glyphicon-remove"></em></a>
+					                    	</div>
+										</td>
+							        </tr>
+							        					        	</tbody>
+					        </table>
+					        <div class="form-group">
+					            <div class="col-sm-9">
+						            <label class="radio-inline">
+						                <input type="radio" name="action" value="delete" checked/>Delete
+						            </label>
+						            						            <label class="radio-inline">
+						            	<button class="btn btn-primary" type="submit">Submit</button>
+						            </label>
+						            <input type="hidden" name="page" value=""/>
+						        </div>
+					        </div>
+					        <ul class="pagination pull-right">
+					            <li><a target="" href="index.php?exam-teach-questions&page=1">|&lsaquo;</a></li><li><a href="#" class="current">1</a></li><li><a target="" href="index.php?exam-teach-questions&page=2">2</a></li><li><a target="" href="index.php?exam-teach-questions&page=3">3</a></li><li><a target="" href="index.php?exam-teach-questions&page=4">4</a></li><li><a target="" href="index.php?exam-teach-questions&page=5">5</a></li><li><a target="" href="index.php?exam-teach-questions&page=6">6</a></li><li><a target="" href="index.php?exam-teach-questions&page=7">7</a></li><li><a target="" href="index.php?exam-teach-questions&page=8">8</a></li><li><a target="" href="index.php?exam-teach-questions&page=9">9</a></li><li><a target="" href="index.php?exam-teach-questions&page=10">10</a></li><li><a target="" href="index.php?exam-teach-questions&page=11"> >> </a></li><li><a target="" href="index.php?exam-teach-questions&page=14">&rsaquo;|</a></li><li><a>A total of 132 data</a></li>					        </ul>
+				        </fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button aria-hidden="true" class="close" type="button" data-dismiss="modal">×</button>
+				<h4 id="myModalLabel">
+					Question details
+				</h4>
+			</div>
+			<div class="modal-body"></div>
+			<div class="modal-footer">
+				 <button aria-hidden="true" class="btn btn-primary" data-dismiss="modal">close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid box" style="background-color:#1a4c87;margin-bottom:0px;" id="footer">
+	<div class="row-fluid">
+		<div class="main itembox">
+			<div class="col-xs-12">
+				<ul class="list-unstyled">
+					<li class="text-center">Megacap Aviation Education Platform &nbsp;&nbsp;MEGACAP AVIATION SERVICE CO.,LTD</li>
+					<li class="text-center">Address: Unit J1-J2, 19th Floor,No.1800,West ZhongShan Road,Shanghai Zhaofeng Universal Bldg,200235,Shanghai,China</li>
+					<li class="text-center">Email: hr@megacap.com.cn</li>
+					<li class="text-center">Copyright © 2016 - 2020</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div></body>
+</html>

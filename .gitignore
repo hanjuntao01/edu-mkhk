@@ -1,5 +1,5 @@
 /phpMyAdmin/*
 /data/*
-/en/*
+#/en/*
 /lib/config.inc.php
 /.project
