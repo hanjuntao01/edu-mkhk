@@ -49,7 +49,7 @@
 				<ul class="list-unstyled list-inline">
 					<li class="menu col-xs-1 active"><a href="index.php" class="icon">首页</a></li>
 					<li class="menu col-xs-1"><a href="index.php?course">课程</a></li>
-					<li class="menu col-xs-1"><a href="index.php?exam-app-basics">考试</a></li>
+					<li class="menu col-xs-1"><a href="index.php?exam">考试</a></li>
 					<li class="menu col-xs-1"><a href="mailto:hr@megacap.com.cn">联系我们</a></li>
 				</ul>
 			</div>

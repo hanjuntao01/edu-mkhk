@@ -30,7 +30,7 @@ class action extends app
 		$csid = $this->ev->get('csid');
 		$contentid = $this->ev->get('contentid');
 		$course = $this->course->getCourseById($csid);
-		$userlevel = $this->course->getUserlevelById($userid);	//获取用户课程等级
+		$userlevel = $this->course->getUserlevelById($userid,$csid);	//获取用户课程等级
 		$catbread = $this->category->getCategoryPos($course['cscatid']);
 		$cat = $this->category->getCategoryById($course['cscatid']);
 		$catbrother = $this->category->getCategoriesByArgs(array(array('AND',"catparent = :catparent",'catparent',$cat['catparent']),array('AND',"catinmenu = '0'")));

@@ -82,9 +82,13 @@ class course_course
 		return $this->db->fetch($sql);
 	}
 	
-	public function getUserlevelById($id)
+	public function getUserlevelById($userid,$csid)
 	{
-		$data = array('userlevel','user',array(array('AND',"userid = :userid",'userid',$id)));
+		//$data = array('userlevel','user',array(array('AND',"userid = :userid",'userid',$id)));
+		$data = array('level as userlevel','user_course_level',array(
+			array('AND',"userid = :userid",'userid',$userid),
+			array('AND',"csid = :csid",'csid',$csid)
+			) );
 		$sql = $this->pdosql->makeSelect($data);
 		return $this->db->fetch($sql);
 	}
