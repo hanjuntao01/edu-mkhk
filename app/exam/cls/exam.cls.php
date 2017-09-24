@@ -26,9 +26,13 @@ class exam_exam
 	}
 
 	//获取用户课程等级
-	public function getUserlevelById($id)
+	public function getUserlevelById($userid,$csid)
 	{
-		$data = array('userlevel,usertruename','user',array(array('AND',"userid = :userid",'userid',$id)));
+		//$data = array('userlevel','user',array(array('AND',"userid = :userid",'userid',$id)));
+		$data = array('level as userlevel','user_course_level',array(
+			array('AND',"userid = :userid",'userid',$userid),
+			array('AND',"csid = :csid",'csid',$csid)
+			) );
 		$sql = $this->pdosql->makeSelect($data);
 		return $this->db->fetch($sql);
 	}
@@ -230,10 +234,11 @@ class exam_exam
 	}
 
 	//根据考试分数升级用户课程等级
-	public function modifyUserlevel($userid,$value)
+	public function modifyUserlevel($userid,$value,$csid)
 	{
+		// file_put_contents('D:\log.txt', "{$userid} -- {$value} -- {$csid} ");
 		$userlevel = $value+1;
-		$sql = "UPDATE x2_user set `userlevel`=$userlevel WHERE userid=$userid";
+		$sql = "UPDATE x2_user_course_level set `level`={$userlevel} WHERE userid={$userid} and csid={$csid}";
 		return $this->db->query($sql);
 	}
 
