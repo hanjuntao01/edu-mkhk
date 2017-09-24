@@ -239,6 +239,7 @@ class action extends app
 				$id = $this->user->insertUser($args);
 				//default basics
 				$this->user->insertOpenbasic(array('obuserid'=>$id,'obbasicid'=>5,'obtime'=>time(),'obendtime'=>time()+365*24*3600));
+				$this->user->insertOpenbasic(array('obuserid'=>$id,'obbasicid'=>6,'obtime'=>time(),'obendtime'=>time()+365*24*3600));
 				$message = array(
 					'statusCode' => 200,
 					"message" => "Operation successfully",
