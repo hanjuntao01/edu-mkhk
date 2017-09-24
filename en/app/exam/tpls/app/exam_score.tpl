@@ -104,6 +104,6 @@ $(function(){
 })
 
 function go(){
-    window.location='index.php?course-app-course&csid=2&contentid={x2;$examlevel3}';
+    window.location='index.php?course-app-course&csid={x2;$csid}&contentid={x2;$contentid}';
   };
 </script>

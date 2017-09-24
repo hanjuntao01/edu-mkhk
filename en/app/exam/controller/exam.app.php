@@ -189,20 +189,25 @@ class action extends app
 
 			//
 			$userid=$_SESSION['currentuser']['sessionuserid'];
-			$userlevel = $this->exam->getUserlevelById($userid);	//获取用户课程等级
+			$csid = $this->data['currentbasic']['csid'];
+			$userlevel = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
 			
 			if($eh['ehsetting']['examlevel']>=$userlevel['userlevel']){
-				if($sessionvars['examsessionscore']>=90){
-					$this->exam->modifyUserlevel($userid,$userlevel['userlevel']);
+				if($sessionvars['examsessionscore']>=$eh['ehsetting']['examsetting']['passscore']){
+					$this->exam->modifyUserlevel($userid,$userlevel['userlevel'],$csid);
 				}
 			}
-			$userlevel_last = $this->exam->getUserlevelById($userid);	//获取用户课程等级
+			$userlevel_last = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
 
 			//
 			$examlevel = $sessionvars['examsessionsetting']['examlevel'];
+			// var_dump($sessionvars['examsessionsetting']['examid']);die();
+			$contentid = $sessionvars['examsessionsetting']['examid'] + 1;
 			$this->tpl->assign('examlevel',$examlevel);
 			$this->tpl->assign('examlevel2',$examlevel+2);
 			$this->tpl->assign('examlevel3',$examlevel+3);
+			$this->tpl->assign('csid',$csid);
+			$this->tpl->assign('contentid',$contentid);
 			
 			$this->tpl->assign('ehid',$ehid);
 			$this->tpl->assign('allright',$allright);
@@ -450,9 +455,10 @@ class action extends app
 		$r = $this->exam->getExamSettingById($examid);
 		//
 		$userid=$_SESSION['currentuser']['sessionuserid'];
-		$userlevel = $this->exam->getUserlevelById($userid);	//获取用户课程等级
-	//	var_dump($userlevel['userlevel']) ;
-	//	var_dump($r['examlevel']);
+		$csid = $this->data['currentbasic']['csid'];
+		$userlevel = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
+		//	var_dump($userlevel['userlevel']) ;
+		//	var_dump($r['examlevel']);
 		if($userlevel['userlevel']>=$r['examlevel']){
 			if(!$r['examid'])
 			{
@@ -636,7 +642,9 @@ class action extends app
 		}
 		//
 		$userid=$_SESSION['currentuser']['sessionuserid'];
-		$userlevel = $this->exam->getUserlevelById($userid);	//获取用户课程等级
+		$csid = $this->data['currentbasic']['csid'];
+		$userlevel = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
+		// var_dump($userlevel);die();
 		$sessionvars = $this->exam->getExamSessionByUserid($this->_user['sessionuserid'],$this->data['currentbasic']['basicid']);
 		if($sessionvars && ($sessionvars['examsessionbasic'] == $this->_user['sessioncurrent']) && ($sessionvars['examsessionstatus'] < 2) && ($sessionvars['examsessiontype'] == 2))
 		$this->tpl->assign('sessionvars',$sessionvars);

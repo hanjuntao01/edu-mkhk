@@ -191,6 +191,7 @@ class action extends app
 			$userid=$_SESSION['currentuser']['sessionuserid'];
 			$csid = $this->data['currentbasic']['csid'];
 			$userlevel = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
+
 			if($eh['ehsetting']['examlevel']>=$userlevel['userlevel']){
 				if($sessionvars['examsessionscore']>=$eh['ehsetting']['examsetting']['passscore']){
 					$this->exam->modifyUserlevel($userid,$userlevel['userlevel'],$csid);
@@ -456,8 +457,8 @@ class action extends app
 		$userid=$_SESSION['currentuser']['sessionuserid'];
 		$csid = $this->data['currentbasic']['csid'];
 		$userlevel = $this->exam->getUserlevelById($userid,$csid);	//获取用户课程等级
-	//	var_dump($userlevel['userlevel']) ;
-	//	var_dump($r['examlevel']);
+		//	var_dump($userlevel['userlevel']) ;
+		//	var_dump($r['examlevel']);
 		if($userlevel['userlevel']>=$r['examlevel']){
 			if(!$r['examid'])
 			{
